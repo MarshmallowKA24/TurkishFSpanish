@@ -1,0 +1,20 @@
+<%- include('_header') %>
+
+<section class="games">
+    <h2>Zona de Juegos</h2>
+    
+    <div class="game" id="memory-game">
+        <h3>Juego de Memoria</h3>
+        <div class="cards"></div>
+        <button id="start-memory">Empezar</button>
+    </div>
+
+    <div class="game" id="quiz-game">
+        <h3>Quiz de Vocabulario</h3>
+        <p>Puntuación: <span id="score">0</span></p>
+    </div>
+</section>
+
+<script src="/js/juegos.js"></script>
+<script src="/js/main.js"></script>
+<%- include('_footer') %>

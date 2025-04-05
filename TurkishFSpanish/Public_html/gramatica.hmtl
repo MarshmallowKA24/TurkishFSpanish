@@ -1,0 +1,58 @@
+<%- include('_header') %>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- ... (otros head elements) ... -->
+</head>
+<body>
+    <nav class="navbar">...</nav>
+
+    <!-- Usa las clases del CSS de gramática -->
+    <section class="grammar-content">
+        <h2>Temario Gramatical</h2>
+        
+        <div class="topic" id="nouns">
+            <h3>Sustantivos</h3>
+            <p>Los sustantivos en turco tienen...</p>
+            <button class="toggle-example">Ver ejemplos</button>
+            <div class="examples" style="display:none">
+                <p>Ejemplo: "ev" (casa), "kitap" (libro)</p>
+            </div>
+        </div>
+
+        <div class="topic" id="verbs">
+            <h3>Verbos</h3>
+            <form class="quiz">
+                <p>¿Cómo se dice "comer" en turco?</p>
+                <input type="text" id="answer">
+                <button type="submit">Verificar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer-wave">...</footer>
+</body>
+</html>
+<script>
+    // Lógica de acordeón para ejemplos
+    document.querySelectorAll('.toggle-example').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const examples = btn.nextElementSibling;
+            examples.style.display = examples.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+    
+    // Quiz interactivo
+    document.querySelector('.quiz').addEventListener('submit', e => {
+        e.preventDefault();
+        const answer = document.getElementById('answer').value.toLowerCase();
+        if(answer === 'yemek') {
+            alert('¡Correcto!');
+        } else {
+            alert('Respuesta: yemek');
+        }
+    });
+    </script>
+    <script src="/js/main.js"></script>
+    <%- include('_footer') %>
